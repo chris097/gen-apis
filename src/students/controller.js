@@ -5,7 +5,7 @@ const queries = require('../students/queries');
 const getStudents = (req, res) => {
     pool.query(queries.getStudents, (error, results) => {
         res.status(200).json(results?.rows);
-        if(error) throw error;
+        // if(error) throw error;
     })
 };
 
@@ -14,7 +14,7 @@ const getStudentById = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(queries.getStudentById, [id], (error, results) => {
         res.status(200).send(results?.rows);
-        if(error) throw error;
+        // if(error) throw error;
     })
 }
 
