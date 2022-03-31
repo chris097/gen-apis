@@ -2,7 +2,10 @@ const pool = require('../../db');
 const queries = require('../students/queries');
 
 const getStudents = (req, res) => {
-    res.send("Get all  students.")
+    pool.query(queries.getStudents, (error, results) => {
+        if(error) throw error;
+        res.status(200).json(results.rows)
+    })
 };
 
 module.exports = {
