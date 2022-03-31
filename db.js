@@ -8,11 +8,11 @@ const Pool = require('pg').Pool;
 // });
 
 const pool = new Pool({
-    Host: "ec2-52-3-60-53.compute-1.amazonaws.com",
-    Database: "dfokb2n758frv0",
-    User: "zvngvoducmidpl",
+    Host: "ec2-54-160-109-68.compute-1.amazonaws.com",
+    Database: "d80rmkghjc03hu",
+    User: "ibpkfwyhvsnaut",
     Port: 5432,
-    Password: "7413c7e75421408c8b5d9ff865aaa7612662d06e0ddb8976bf3a7ad6564aef11",
+    Password: "786e5d68d569132e6a1a057ae369bd38d20d8fd69e8d2f6602e14c57058f528e",
 });
 
 module.exports = pool;

@@ -4,8 +4,8 @@ const queries = require('../students/queries');
 // query to access all students
 const getStudents = (req, res) => {
     pool.query(queries.getStudents, (error, results) => {
-        res.status(200).json(results?.rows);
         // if(error) throw error;
+        res.status(200).json(results?.rows);
     })
 };
 
