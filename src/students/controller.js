@@ -3,7 +3,8 @@ const queries = require('../students/queries');
 
 const getStudents = (req, res) => {
     pool.query(queries.getStudents, (error, results) => {
-        res.send(results.rows)
+        if(error) throw error;
+        res.status(200).json(results.rows)
     })
 };
 
