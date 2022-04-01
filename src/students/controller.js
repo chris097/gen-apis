@@ -5,7 +5,7 @@ const queries = require('../students/queries');
 const getStudents = (req, res) => {
     pool.query(queries.getStudents, (error, results) => {
         // if(error) throw error;
-        res.status(200).json(results?.rows);
+        res.status(200).json(results.rows);
     })
 };
 
@@ -13,7 +13,7 @@ const getStudents = (req, res) => {
 const getStudentById = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(queries.getStudentById, [id], (error, results) => {
-        res.status(200).send(results?.rows);
+        res.status(200).send(results.rows);
         // if(error) throw error;
     })
 }
@@ -24,7 +24,7 @@ const addStudent = (req, res) => {
 
     // check if email exists
     pool.query(queries.checkEmailExist, [email], (error, results) => {
-        if(results?.rows?.length){
+        if(results.rows.length){
             res.send("Email already exist")   
         }
     });
