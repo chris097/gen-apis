@@ -5,7 +5,8 @@ const queries = require('../students/queries');
 const getStudents = (req, res) => {
     pool.query(queries.getStudents, (error, results) => {
         // if(error) throw error;
-        res?.status(200).send(results?.rows);
+        res?.status(200).json(results?.rows);
+        console.log(results)
     })
 };
 
@@ -14,6 +15,7 @@ const getStudentById = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(queries.getStudentById, [id], (error, results) => {
         res?.status(200).send(results?.rows);
+        console.log(results.rows)
         // if(error) throw error;
     })
 }
@@ -31,6 +33,7 @@ const addStudent = (req, res) => {
 
     pool.query(queries.addStudent, [name, email, age, dob], (error, results) => {
         res?.status(201).send("Student successfully created.")
+        console.log(results)
         // if(error) throw error;
     })
 
